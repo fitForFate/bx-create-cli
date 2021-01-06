@@ -16,7 +16,7 @@ if(program.args.length<1) return program.help()
 // 跟vue init webpack project-name 一样，第一个参数是webpack，第二个参数是project-name
 let templateName = program.args[0]
 let projectName = program.args[1]
-console.log(program)
+
 //校验一下参数
 if(!tplObj[templateName]) {
   console.log(chalk.red('\n Template does not exist! \n'))
@@ -41,7 +41,7 @@ download(
   err => {
     if(err){
       spinner.fail();
-      console.log(chalk.red(`Generation failed! \n`))
+      console.log(chalk.red(`Generation failed! ${err}\n`))
       return
     }
 
